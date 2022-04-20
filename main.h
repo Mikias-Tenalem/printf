@@ -25,7 +25,7 @@ typedef struct flags
  * @f: pointer to the correct printing function
  */
 typedef struct printHandler
- {
+{
     char c;
     int (*f)(va_list ap, flags_t *f);
 } ph;
