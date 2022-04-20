@@ -25,3 +25,17 @@ typedef struct flags
  * @f: pointer to the correct printing function
  */
 typedef struct printHandler
+ {
+            p++;
+            if (*p == '%')
+            {
+                count += _putchar('%');
+                continue;
+            }
+            while (get_flag(*p, &flags))
+                p++;
+            pfunc = get_print(*p);
+            count += (pfunc)
+                         ? pfunc(arguments, &flags)
+                         : _printf("%%%c", *p);
+        }
