@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _printf - custom function that format and print data
+ * _printf - produce output according to a format
  * @format:  list of types of arguments passed to the function
  * Return: int
  */
