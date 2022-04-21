@@ -12,7 +12,7 @@ int _isdigit(int c)
 }
 
 /**
- * _strlen - returns the length of a string
+ * _strlen - return the length of a string
  * @s: the string whose length to check
  *
  * Return: integer length of string
@@ -27,7 +27,7 @@ int _strlen(char *s)
 }
 
 /**
- * print_number - prints a number with options
+ * print_number - print a number with options
  * @str: the base number as a string
  * @params: the parameter struct
  *
