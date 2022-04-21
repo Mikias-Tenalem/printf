@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_from_to - prints a range of char addresses
+ * print_from_to - print a range of char addresses
  * @start: starting address
  * @stop: stopping address
  * @except: except address
@@ -22,9 +22,9 @@ int print_from_to(char *start, char *stop, char *except)
 }
 
 /**
- * print_rev - prints string in reverse
+ * print_rev - print string in reverse
  * @ap: string
- * @params: the parameters struct
+ * @params: the parameter struct
  *
  * Return: number bytes printed
  */
@@ -46,9 +46,9 @@ int print_rev(va_list ap, params_t *params)
 }
 
 /**
- * print_rot13 - prints string in rot13
+ * print_rot13 - print string in rot13
  * @ap: string
- * @params: the parameters struct
+ * @params: the parameter struct
  *
  * Return: number bytes printed
  */
