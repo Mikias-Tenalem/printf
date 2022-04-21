@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * print_hex - prints unsigned hex numbers in lowercase
+ * print_hex - print unsigned hex numbers in lowercase
  * @ap: the argument pointer
- * @params: the parameters struct
+ * @params: the parameter struct
  *
  * Return: bytes printed
  */
@@ -33,7 +33,7 @@ int print_hex(va_list ap, params_t *params)
 /**
  * print_HEX - prints unsigned hex numbers in uppercase
  * @ap: the argument pointer
- * @params: the parameters struct
+ * @params: the parameter struct
  *
  * Return: bytes printed
  */
@@ -62,7 +62,7 @@ int print_HEX(va_list ap, params_t *params)
 /**
  * print_binary - prints unsigned binary number
  * @ap: the argument pointer
- * @params: the parameters struct
+ * @params: the parameter struct
  *
  * Return: bytes printed
  */
@@ -79,9 +79,9 @@ int print_binary(va_list ap, params_t *params)
 }
 
 /**
- * print_octal - prints unsigned octal numbers
+ * print_octal - print unsigned octal numbers
  * @ap: the argument pointer
- * @params: the parameters struct
+ * @params: the parameter struct
  *
  * Return: bytes printed
  */
