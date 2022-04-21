@@ -6,7 +6,7 @@
 .B _printf() 
 - is a Holberton school group project. The task is to write a custom version of printf() from standard library.
 .SH DESCRIPTION
-This is simple clone of _printf function with basic functionality, but we are adding support for more specifiers, length modifiers and precision
+This is simple clone of _printf function with basic functionality, but we are adding support for more specifier, length modifiers and precision
 .SH OPTIONS
 .B %c
 - prints a character
@@ -62,11 +62,11 @@ A blank should be left before a positive number (or empty string) produced by a 
 .SH The length modifier
 .B h
 
-A following integer conversion corresponds to a short int or unsigned short int argument, or a following n conversion corresponds to a pointer to a short int argument.
+A following integer conversion correspond to a short int or unsigned short int argument, or a following n conversion corresponds to a pointer to a short int argument.
 
 .B l
 
-(ell) A following integer conversion corresponds to a long int or unsigned long int argument, or a following n conversion corresponds to a pointer to a long int argument, or a following c conversion corresponds to a wint_t argument, or a following s conversion corresponds to a pointer to wchar_t argument.
+(ell) A following integer conversion correspond to a long int or unsigned long int argument, or a following n conversion corresponds to a pointer to a long int argument, or a following c conversion corresponds to a wint_t argument, or a following s conversion corresponds to a pointer to wchar_t argument.
 
 
 .B 
