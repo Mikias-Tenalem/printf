@@ -1,73 +1,49 @@
 #include "main.h"
 
 /**
- * _printf - produce output according to a formats
- * @format:  list of types of arguments passed to the functions
- * Return: int
+ * _printf - prints anything
+ * @format: the format string
+ *
+ * Return: number of bytes printed
  */
-
 int _printf(const char *format, ...)
 {
-	va_list list;
-	int idx, j;
-	int len_buf = 0;
-	char *s;
-	char *create_buff;
+	int sum = 0;
+	va_list ap;
+	char *p, *start;
+	params_t params = PARAMS_INIT;
 
-	type_t ops[] = {
-		{"c", print_c},
-		{"s", print_s},
-		{"i", print_i},
-		{"d", print_i},
-		{"b", print_bin},
-		{NULL, NULL}
-	};
-	create_buff = malloc(1024 * sizeof(char));
-	if (create_buff == NULL)
-	{
-		free(create_buff);
+	va_start(ap, format);
+
+	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
-	}
-	va_start(list, format);
-	if (format == NULL || list == NULL)
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
-	for (idx = 0; format[idx] != '\0'; idx++)
+	for (p = (char *)format; *p; p++)
 	{
-		if (format[idx] == '%' && format[idx + 1] == '%')
+		init_params(&params, ap);
+		if (*p != '%')
+		{
+			sum += _putchar(*p);
 			continue;
-		else if (format[idx] == '%')
-		{
-			if (format[idx + 1] == ' ')
-				idx += _position(format, idx);
-			for (j = 0; ops[j].f != NULL; j++)
-			{
-				if (format[idx + 1] == *(ops[j].op))
-				{
-					s = ops[j].f(list);
-					if (s == NULL)
-						return (-1);
-					_strlen(s);
-					_strcat(create_buff, s, len_buf);
-					len_buf += _strlen(s);
-					idx++;
-					break;
-				}
-			}
-			if (ops[j].f == NULL)
-			{
-				create_buff[len_buf] = format[idx];
-				len_buf++;
-			}
 		}
+		start = p;
+		p++;
+		while (get_flag(p, &params)) /* while char at p is flag char */
+		{
+			p++; /* next char */
+		}
+		p = get_width(p, &params, ap);
+		p = get_precision(p, &params, ap);
+		if (get_modifier(p, &params))
+			p++;
+		if (!get_specifier(p))
+			sum += print_from_to(start, p,
+				params.l_modifier || params.h_modifier ? p - 1 : 0);
 		else
-		{
-			create_buff[len_buf] = format[idx];
-			len_buf++;
-		}
+			sum += get_print_func(p, ap, &params);
 	}
-	create_buff[len_buf] = '\0';
-	write(1, create_buff, len_buf);
-	va_end(list);
-	free(create_buff);
-	return (len_buf);
+	_putchar(BUF_FLUSH);
+	va_end(ap);
+	return (sum);
 }
