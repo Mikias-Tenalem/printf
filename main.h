@@ -20,7 +20,7 @@
 #define CONVERT_UNSIGNED	2
 
 /**
- * struct parameters - parameters struct
+ * struct parameter - parameters struct
  *
  * @unsign: flag if unsigned value
  *
