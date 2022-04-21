@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * _printf - produce output according to a format
- * @format:  list of types of arguments passed to the function
+ * _printf - produce output according to a formats
+ * @format:  list of types of arguments passed to the functions
  * Return: int
  */
 
